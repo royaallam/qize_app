@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_qize_app/data/question.dart';
 
 
 class ResultQiue extends StatelessWidget {
@@ -6,6 +7,21 @@ class ResultQiue extends StatelessWidget {
   
 
   final List <String> chooseAnswer;
+   
+    List<Map<String,Object>>  getSumaryData(){
+
+final List<Map<String,Object>>summary=[];
+for (var i=0;i<chooseAnswer.length;i++){
+  summary.add(
+    {'question_index':i,
+    'question':question[i],
+    'correct_answer':question[0],
+    'user_answer':chooseAnswer[i]
+    }
+  );
+}
+return summary;
+   }
 
   @override
   Widget build(BuildContext context) {
