@@ -20,6 +20,6 @@ class AnswerBt extends StatelessWidget {
             )
  
           ),
-            onPressed: onTap, child:Text(textBm) );
+            onPressed: onTap, child:Text(textBm,textAlign: TextAlign.center,) );
   }
 }

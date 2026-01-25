@@ -10,26 +10,26 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-Widget?  activeScreen ;
-@override
-  void initState() {
-    activeScreen=StartScreen(swithchScreen);
-    super.initState();
+ final List<String> selectedAnswers = [];
+  var activeScreen = 'start-screen';
 
-  }
-
-  void swithchScreen(){
+  void swithchScreen() {
     setState(() {
-      activeScreen=const QuestionScreen();
+      activeScreen = 'question-screen';
     });
   }
-  
-  
-  
-  
-  
+
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
+
   @override
   Widget build(BuildContext context) {
+    Widget screenWidget = StartScreen(swithchScreen);
+
+    if (activeScreen == 'question-screen') {
+      screenWidget = QuestionScreen(onSelectAnswer: chooseAnswer);
+    }
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -38,18 +38,21 @@ Widget?  activeScreen ;
       ),
       home: Scaffold(
         body: Container(
-          decoration:const  BoxDecoration(
-            gradient: LinearGradient(colors:[Color.fromARGB(255, 73, 13, 151),
-            Color.fromARGB(255, 107, 15, 168)],
-            begin: Alignment.topLeft,
-            end:Alignment.bottomRight
-            
-            )
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 73, 13, 151),
+                Color.fromARGB(255, 107, 15, 168),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
-          child: activeScreen,
+          child: activeScreen == 'start-screen'
+              ? StartScreen(swithchScreen)
+              : QuestionScreen(onSelectAnswer: chooseAnswer),
         ),
-      )
-   
+      ),
     );
   }
 }
