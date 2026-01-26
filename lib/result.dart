@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_qize_app/data/question.dart';
-
+import 'package:flutter_qize_app/question_summary.dart';
 
 class ResultQiue extends StatelessWidget {
   const ResultQiue({super.key,required this.chooseAnswer,});
@@ -25,6 +25,13 @@ return summary;
 
   @override
   Widget build(BuildContext context) {
+    final summaryData=getSumaryData();
+    final numTotalQuestion=question.length;
+    final numCorrectQuestion=summaryData.where(
+      (data){
+        return data['user_answer']== data['correct_answer'];
+      }
+    ).length;
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -34,9 +41,9 @@ return summary;
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text('You answered x out of y question correct'),
+            Text('You answered  $numCorrectQuestion out of $numTotalQuestion question correct'),
             SizedBox(height: 30,),
-            Text('List of answers and question...'),
+            QuestionSummary(summaryData: getSumaryData()),
               SizedBox(height: 30,),
               TextButton(onPressed: (){},
                child: Text("Restart quiz!")),

@@ -15,15 +15,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
   
   void answerQuestion(String selectedAnswer){
    widget.onSelectAnswer(selectedAnswer);
+   
     
     setState(() {
-      currentQuestionIndex+=1;
+      currentQuestionIndex += 1;
 
     });
   }
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
    final currentQuestion = question[currentQuestionIndex];
+
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -39,7 +41,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
               ),
             SizedBox(height: 30),
             ...currentQuestion.getShuffledAnswers().map((item) {
-              return AnswerBt(textBm: item, onTap: (){
+              return AnswerBt(
+                textBm: item,
+               onTap: (){
                 answerQuestion(item);
               },
               );
