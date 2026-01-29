@@ -56,6 +56,7 @@ class ResultQuiz extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              SizedBox(height: 50,),
               Text(
                 'You Answered $numCorrectQuestions Out Of '
                 '$numTotalQuestions Questions Correctly!',
