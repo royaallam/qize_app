@@ -12,7 +12,7 @@ class QuestionSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 500,
       child: SingleChildScrollView(
         child: Column(
           children: summaryData.map((data) {
@@ -45,16 +45,18 @@ class QuestionSummary extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          decoration: TextDecoration.none
                         ),
                       ),
                       const SizedBox(height: 5),
                       Text(
                         'Your answer: ${data['user_answer']}',
-                        style: const TextStyle(color: Colors.white70,fontSize: 20),
+                        style: const TextStyle(color: Colors.white70,fontSize: 20,decoration: TextDecoration.none),
                       ),
                       Text(
                         'Correct answer: ${data['correct_answer']}',
-                        style: const TextStyle(color: Colors.greenAccent,fontSize: 20),
+                        style: const TextStyle(color: Colors.greenAccent,fontSize: 20,decoration: TextDecoration.none),
                       ),
                       const SizedBox(height: 15),
                     ],

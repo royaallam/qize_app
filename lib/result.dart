@@ -50,34 +50,37 @@ class ResultQuiz extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              'You Answered $numCorrectQuestions Out Of '
-              '$numTotalQuestions Questions Correctly!',
-              style: const TextStyle(fontSize: 15,color: Colors.white,decoration: TextDecoration.none),
-              textAlign: TextAlign.center,
-              
-              
-            ),
-            const SizedBox(height: 30),
-            QuestionSummary(summaryData: summaryData),
-            const SizedBox(height: 30),
-            TextButton.icon(
-              onPressed: () {
-                Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(
-                    builder: (context) => const StartScreen(),
-                  ),
-                  (route) => false,
-                );
-              },
-              icon: const Icon(Icons.restart_alt),
-              label: const Text('Restart Quiz'),
-            ),
-          ],
+        child: Container(
+          margin: EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'You Answered $numCorrectQuestions Out Of '
+                '$numTotalQuestions Questions Correctly!',
+                style: const TextStyle(fontSize: 15,color: Colors.white,decoration: TextDecoration.none),
+                textAlign: TextAlign.center,
+                
+                
+              ),
+              const SizedBox(height: 30),
+              QuestionSummary(summaryData: summaryData),
+              const SizedBox(height: 30),
+              TextButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => const StartScreen(),
+                    ),
+                    (route) => false,
+                  );
+                },
+                icon: const Icon(Icons.restart_alt),
+                label: const Text('Restart Quiz',style: TextStyle(color: Colors.white70),),
+              ),
+            ],
+          ),
         ),
       ),
     );
