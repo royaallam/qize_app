@@ -30,6 +30,7 @@ class QuestionSummary extends StatelessWidget {
                   color: isCorrect ? Colors.green : Colors.red,
                   shape: BoxShape.circle,
                 ),
+                
                 child: Text(
                   ((data['question_index'] as int) + 1).toString(),
                   style: const TextStyle(color: Colors.white,fontSize: 20),

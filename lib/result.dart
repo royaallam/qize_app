@@ -77,10 +77,13 @@ class ResultQuiz extends StatelessWidget {
                     (route) => false,
                   );
                 },
-                icon: const Icon(Icons.restart_alt),
-                label: const Text('Restart Quiz',style: TextStyle(color: Colors.white70),),
+                icon: const Icon(Icons.restart_alt,size: 24,color: Colors.white70,),
+                label: const Text('Restart Quiz',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 24),
               ),
-            ],
+          )],
           ),
         ),
       ),
