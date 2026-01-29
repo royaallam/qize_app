@@ -13,6 +13,7 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
  List<String> _selectedAnswers = [];
+/*
   var activeScreen = 'start-screen';
 
   void swithchScreen() {
@@ -33,9 +34,11 @@ class _QuizState extends State<Quiz> {
       });
     }
   }
-
+  
+*/
   @override
   Widget build( context) {
+    /*
     Widget screenWidget = StartScreen(swithchScreen);
 
     if (activeScreen == 'question-screen') {
@@ -44,6 +47,7 @@ class _QuizState extends State<Quiz> {
     if(activeScreen =='result-screen'){
       screenWidget=ResultQiue(chooseAnswer: _selectedAnswers,);
     }
+    */
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -62,11 +66,16 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen == 'start-screen'
-              ? StartScreen(swithchScreen)
-              : QuestionScreen(onSelectAnswer: chooseAnswer),
+          
+
+          
         ),
       ),
     );
   }
 }
+/*
+child: activeScreen == 'start-screen'
+              ? StartScreen(swithchScreen)
+              : QuestionScreen(onSelectAnswer: chooseAnswer),
+*/
