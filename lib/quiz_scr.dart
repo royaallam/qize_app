@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_qize_app/ansButtoom.dart';
-import 'package:flutter_qize_app/data/question.dart';
+import 'package:flutter_qize_app/answer_buttom.dart';
+import 'package:flutter_qize_app/data/question_date.dart';
 import 'package:flutter_qize_app/result.dart';
 
 class QuestionScreen extends StatefulWidget {
@@ -70,7 +70,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             ),
             const SizedBox(height: 30),
             ...currentQuestion.getShuffledAnswers().map((answer) {
-              return AnswerBt(
+              return AnswerButtom(
                 textBm: answer,
                 onTap: () {
                   answerQuestion(answer);

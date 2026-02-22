@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_qize_app/quiz.dart';
 import 'package:flutter_qize_app/screen_one.dart';
-
-
-
-
 
 void main() {
   runApp(MyApp());
@@ -12,7 +7,7 @@ void main() {
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+   
    return MaterialApp(
   debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AnswerBt extends StatelessWidget {
-  const AnswerBt({super.key,
+class AnswerButtom extends StatelessWidget {
+  const AnswerButtom({super.key,
   required this.textBm,
    required this.onTap,
   });
