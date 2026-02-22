@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_qize_app/data/question.dart';
-import 'package:flutter_qize_app/question_summary.dart';
-import 'package:flutter_qize_app/screen_one.dart';
+import 'package:flutter_qize_app/data/question_date.dart';
+import 'package:flutter_qize_app/result_ques_summary.dart';
+import 'package:flutter_qize_app/start_screen.dart';
 
 
 
@@ -66,7 +66,7 @@ class ResultQuiz extends StatelessWidget {
                 
               ),
               const SizedBox(height: 30),
-              QuestionSummary(summaryData: summaryData),
+              ResultQuesSummary(summaryData: summaryData),
               const SizedBox(height: 30),
               TextButton.icon(
                 onPressed: () {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_qize_app/screen_one.dart';
+import 'package:flutter_qize_app/start_screen.dart';
 
 void main() {
   runApp(MyApp());
